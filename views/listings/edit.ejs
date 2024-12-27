@@ -1,0 +1,50 @@
+<% layout('./layout/boilerplate') -%>
+<body>
+    <h1>Edit your details</h1>
+    <form action="/listings/<%=list.id%>?_method=PUT" method="POST" novalidate class="needs-validation col-6 mx-auto" enctype="multipart/form-data">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" name="title" value="<%=list.title%>" required>
+            <label for="floatingInput">Title</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter your title</div>
+            
+          </div>
+          
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description" required><%=list.description%></textarea>
+            <label for="floatingTextarea">Place Description</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter a short description</div>
+          </div>
+        <br>
+        
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInput" placeholder="" name="price" value="<%=list.price%>" required>
+            <label for="floatingInput">Price </label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a valid price</div>
+          </div>
+         <div class="mb-3"><h5>Original Image</h5><img src=<%=compressedImage%> alt=""></div>
+          
+          
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="floatingInput" placeholder="" name="image" required>
+            <label for="floatingInput">Upload your Image</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" name="location" value="<%=list.location%>" required>
+            <label for="floatingInput">Location</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter your valid location</div>
+          </div>
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="" name="country" value="<%=list.country%>" required>
+          <label for="floatingInput">Country </label>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Enter your country name</div>
+        </div>
+        <button class="btn btn-success">Click to sumbit the edited details</button>
+    </form>
+    <br>
+    <script src="/js/script.js"></script>
+</body>

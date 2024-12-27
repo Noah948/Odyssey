@@ -1,0 +1,46 @@
+<% layout('./layout/boilerplate') -%>
+<body>
+    <h1>Add your new place details </h1>
+    <form action="/listings" method="POST"  novalidate class="needs-validation col-6 mx-auto" enctype="multipart/form-data" >
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" name="title" required>
+            <label for="floatingInput">Title</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter your title</div>
+          </div>
+          
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description" required ></textarea>
+            <label for="floatingTextarea">Place Description</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter a short description</div>
+          </div>
+        <br>
+        
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInput" placeholder="" name="price" required min="0">
+            <label for="floatingInput">Price </label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a valid price</div>
+          </div>
+        
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="floatingInput" placeholder="" name="image" required>
+            <label for="floatingInput">Upload your Image</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" name="location" required>
+            <label for="floatingInput">Location</label>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter your valid location</div>
+          </div>
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="" name="country" required>
+          <label for="floatingInput">Country </label>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Enter your country name</div>
+        </div>
+        <button class="btn btn-success">Click to submit</button>
+    </form>
+    <br> 
+</body>

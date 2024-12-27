@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="display: flex; align-items: center;" href="#">
+            <img src="https://res.cloudinary.com/da0lsiq9d/image/upload/v1735289441/sunset_bf9a7a.png" alt="Logo" width="60" height="50" class="d-inline-block align-text-top">
+            <span class="h5 my-4" style="font-weight: 500; color: white;">Odyssey</span>
+          </a>
+          <!-- <h1>Odyssey</h1> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/listings">Explore</a>
+          </li>
+          </ul>
+          <form class="d-flex mx-auto search-form">
+            <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" name="query">
+            <button class="btn btn-outline-light search-btn" type="submit">
+              <i class="fas fa-search"></i> <!-- Font Awesome magnifying glass -->
+            </button>
+          </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/listings/new">Add New Place</a>
+            </li>
+          <%if(!currUser){%>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup"><b>Signup</b></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/login"><b>Login</b></a>
+          </li>
+        <%}%>
+        <%if(currUser){%>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout"><b>logout</b></a>
+          </li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 

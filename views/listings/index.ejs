@@ -1,0 +1,102 @@
+ <% layout('./layout/boilerplate') -%> 
+<body>
+  <div class="container my-3">
+    <div class="row text-center align-items-center justify-content-between">
+      <!-- Amazing Pools -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-water fa-sm"></i>
+          <p class="mt-1 small">Pools</p>
+        </a>
+      </div>
+      <!-- Icons -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-star fa-sm"></i>
+          <p class="mt-1 small">Icons</p>
+        </a>
+      </div>
+      <!-- Farms -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-tractor fa-sm"></i>
+          <p class="mt-1 small">Farms</p>
+        </a>
+      </div>
+      <!-- Lakefront -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-water-ladder fa-sm"></i>
+          <p class="mt-1 small">Lakefront</p>
+        </a>
+      </div>
+      <!-- Top of the World -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-mountain fa-sm"></i>
+          <p class="mt-1 small">World</p>
+        </a>
+      </div>
+      <!-- National Parks -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-tree fa-sm"></i>
+          <p class="mt-1 small">Parks</p>
+        </a>
+      </div>
+      <!-- Amazing Views -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-binoculars fa-sm"></i>
+          <p class="mt-1 small">Views</p>
+        </a>
+      </div>
+      <!-- Rooms -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-bed fa-sm"></i>
+          <p class="mt-1 small">Rooms</p>
+        </a>
+      </div>
+      <!-- OMG! -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-face-surprise fa-sm"></i>
+          <p class="mt-1 small">OMG!</p>
+        </a>
+      </div>
+      <!-- Luxe -->
+      <div class="col-auto hover-effect">
+        <a href="#" class="text-decoration-none text-dark">
+          <i class="fa-solid fa-gem fa-sm"></i>
+          <p class="mt-1 small">Luxe</p>
+        </a>
+      </div>
+      <!-- Toggle Button -->
+      <div class="col-auto border rounded">
+        <label class="form-check-label small" for="toggleDisplay"><b>Display Total Before Taxes</b></label>
+        <div class="form-check form-switch ">
+          <input class="form-check-input mx-auto" type="checkbox" id="toggleDisplay">
+        </div>
+      </div>
+    </div>
+  </div>
+    <h3>All Listings</h3>
+    <div class="container-md-fluid listcards row d-inline-flex p-2 justify-content-evenly mx-auto">
+        <% for (let item of list) { %>
+            <div class="cardList mx-3 my-2">
+              <a href="/listings/<%= item._id %>" style="text-decoration: none; color: black;">
+                <img src="<%= item.image.url %>" class="card-img-top" alt="Image for <%= item.title %>">
+                <div class="card-body">
+                  <h6 class="card-title"><%= item.title %></h6>
+                  <p class="card-text">₹<%= item.price %>/night</p>
+                </div>
+              </a>
+          </div>
+        <% } %>  
+      </div>
+    </div>
+    
+    
+      
+</body>
