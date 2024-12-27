@@ -6,7 +6,7 @@ module.exports.index = async (req, res) => {
     const list = await listing.find({});
     res.render("listings/index.ejs", { list });
   } catch (err) {
-    console.error("Error fetching listings:", err);
+    console.error("Error fetching listings:", JSON.stringify(err, null, 2));
     req.flash("error", "Unable to fetch listings");
     res.redirect("/");
   }
@@ -34,7 +34,7 @@ module.exports.listingCreation = async (req, res) => {
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
   } catch (err) {
-    console.error("Error creating listing:", err);
+    console.error("Error creating listing:", JSON.stringify(err, null, 2));
     req.flash("error", "Error creating listing");
     res.redirect("/listings/new");
   }
@@ -55,7 +55,7 @@ module.exports.show = async (req, res) => {
 
     res.render("./listings/show.ejs", { list });
   } catch (err) {
-    console.error("Error fetching listing:", err);
+    console.error("Error fetching listing:", JSON.stringify(err, null, 2));
     req.flash("error", "Error fetching the listing");
     res.redirect("/listings");
   }
@@ -74,7 +74,7 @@ module.exports.edit = async (req, res) => {
     let compressedImage = list.image.url.replace("/upload", "/upload/w_250");
     res.render("./listings/edit.ejs", { list, compressedImage });
   } catch (err) {
-    console.error("Error fetching listing for edit:", err);
+    console.error("Error fetching listing for edit:", JSON.stringify(err, null, 2));
     req.flash("error", "Error fetching the listing");
     res.redirect("/listings");
   }
@@ -104,7 +104,7 @@ module.exports.update = async (req, res) => {
     req.flash("success", "Listing Updated!");
     res.redirect(`/listings/${id}`);
   } catch (err) {
-    console.error("Error updating listing:", err);
+    console.error("Error updating listing:", JSON.stringify(err, null, 2));
     req.flash("error", "Error updating the listing");
     res.redirect(`/listings/${req.params.id}/edit`);
   }
@@ -124,7 +124,7 @@ module.exports.delete = async (req, res) => {
     req.flash("success", "Listing Deleted");
     res.redirect("/listings");
   } catch (err) {
-    console.error("Error deleting listing:", err);
+    console.error("Error deleting listing:", JSON.stringify(err, null, 2));
     req.flash("error", "Error deleting the listing");
     res.redirect("/listings");
   }
