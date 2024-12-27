@@ -13,8 +13,7 @@ module.exports.listingCreation=(req,res)=>{
     let newDetail = new listing({ ...req.body });
     newDetail.owner=req.user._id;
     newDetail.image={url,fileName}
-    newDetail.save().then((res)=>{ })
-        .catch(err => console.log(err));
+    newDetail.save()
       req.flash("success","New Listing Created!"); 
      res.redirect("/listings")    
 }
