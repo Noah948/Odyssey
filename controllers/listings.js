@@ -7,13 +7,13 @@ module.exports.index=async (req,res)=>{
 module.exports.new=(req,res)=>{
     res.render("./listings/new.ejs");
 }
-module.exports.listingCreation=(req,res)=>{
+module.exports.listingCreation=async(req,res)=>{
    let url=req.file.path;
    let fileName=req.file.filename;
     let newDetail = new listing({ ...req.body });
     newDetail.owner=req.user._id;
     newDetail.image={url,fileName}
-    newDetail.save()
+    await newDetail.save()
       req.flash("success","New Listing Created!"); 
      res.redirect("/listings")    
 }
