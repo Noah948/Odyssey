@@ -29,3 +29,30 @@ Odyssey is a traveler-based website where users can share their experiences by a
 
    ```bash
    git clone https://github.com/Noah948/odyssey.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd odyssey
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Access the website locally:
+
+   Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+6. Visit the live website:
+
+   [Odyssey Website](https://odyssey-htgn.onrender.com/listings)
